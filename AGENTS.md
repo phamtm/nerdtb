@@ -17,4 +17,6 @@ Follow Biome defaults: 2-space indentation, single quotes in TSX/TS, trailing co
 A test runner is not yet wired; when adding coverage, introduce Vitest plus React Testing Library and expose it via an `npm run test` script. Colocate specs as `*.test.tsx` beside the component, prefer table-driven cases, and focus on routing logic, accessibility, and pure helpers before styling. If snapshots are necessary, pair them with explicit assertions (text, aria roles) so regressions stay obvious. Document any newly added mocks or fixtures inside the PR description.
 
 ## Commit & Pull Request Guidelines
-Adopt Conventional Commit subjects (`feat: add hero grid`, `fix: correct theme tokens`). Keep commits logically scoped and reference the relevant issue ID in the body when available. Pull requests should include: purpose summary, screenshots or recordings for UI tweaks, a checklist of commands executed (`npm run lint`, `npm run build`), and a note about any follow-up tasks for future contributors.
+- Follow the Conventional Commits spec for every commit subject (`feat: add hero grid`, `fix: correct theme tokens`) so automated tooling can reason about history.
+- Keep commits logically scoped and reference the relevant issue ID in the body when available.
+- Pull requests should include: purpose summary, screenshots or recordings for UI tweaks, a checklist of commands executed (`npm run lint`, `npm run build`), and a note about any follow-up tasks for future contributors.
