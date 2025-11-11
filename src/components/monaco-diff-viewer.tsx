@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import dynamic from "next/dynamic";
 import { useCallback, useMemo } from "react";
@@ -16,6 +16,7 @@ export type MonacoDiffViewerProps = {
   readonly wordWrap: boolean;
   readonly unified: boolean;
   readonly className?: string;
+  readonly height?: string | number;
 };
 
 // MonacoDiffViewer wraps the Monaco diff editor so the page can toggle layout
@@ -27,6 +28,7 @@ export function MonacoDiffViewer({
   wordWrap,
   unified,
   className,
+  height = "calc(100vh)",
 }: MonacoDiffViewerProps) {
   const diffOptions = useMemo(
     () => ({
@@ -82,7 +84,7 @@ export function MonacoDiffViewer({
         theme="diffview"
         options={diffOptions}
         onMount={handleMount}
-        height="calc(100vh)"
+        height={height}
         width="100%"
         loading={
           <div className="flex h-full w-full items-center justify-center text-sm text-zinc-500">

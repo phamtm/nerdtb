@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { forwardRef } from "react";
 import type { CSSProperties, HTMLAttributes, ReactNode } from "react";
@@ -60,21 +60,19 @@ export const Flex = forwardRef<HTMLDivElement, FlexProps>(function Flex(
 
 type RowProps = Omit<FlexProps, "direction">;
 
-export const Row = forwardRef<HTMLDivElement, RowProps>(function Row(
-  props,
-  ref,
-) {
-  return <Flex ref={ref} direction="row" {...props} />;
-});
+export const Row = forwardRef<HTMLDivElement, RowProps>(
+  function Row(props, ref) {
+    return <Flex ref={ref} direction="row" {...props} />;
+  },
+);
 
 type ColProps = Omit<FlexProps, "direction">;
 
-export const Col = forwardRef<HTMLDivElement, ColProps>(function Col(
-  props,
-  ref,
-) {
-  return <Flex ref={ref} direction="column" {...props} />;
-});
+export const Col = forwardRef<HTMLDivElement, ColProps>(
+  function Col(props, ref) {
+    return <Flex ref={ref} direction="column" {...props} />;
+  },
+);
 
 type StackProps = {
   readonly children: ReactNode;
@@ -98,15 +96,16 @@ type SpacerProps = {
   readonly direction?: "horizontal" | "vertical";
 } & HTMLAttributes<HTMLDivElement>;
 
-export const Spacer = forwardRef<HTMLDivElement, SpacerProps>(
-  function Spacer({ min, direction = "horizontal", style, ...rest }, ref) {
-    const computedStyle: CSSProperties = {
-      flexShrink: 0,
-      flexBasis: min ? dimensionValue(min) : undefined,
-      width: direction === "vertical" ? "100%" : undefined,
-      height: direction === "horizontal" ? "100%" : undefined,
-      ...style,
-    };
-    return <div ref={ref} style={computedStyle} {...rest} />;
-  },
-);
+export const Spacer = forwardRef<HTMLDivElement, SpacerProps>(function Spacer(
+  { min, direction = "horizontal", style, ...rest },
+  ref,
+) {
+  const computedStyle: CSSProperties = {
+    flexShrink: 0,
+    flexBasis: min ? dimensionValue(min) : undefined,
+    width: direction === "vertical" ? "100%" : undefined,
+    height: direction === "horizontal" ? "100%" : undefined,
+    ...style,
+  };
+  return <div ref={ref} style={computedStyle} {...rest} />;
+});

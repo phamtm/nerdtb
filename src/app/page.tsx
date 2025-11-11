@@ -8,8 +8,9 @@ const tools = [
     href: "/diff",
   },
   {
-    name: "JSON Sorter",
-    description: "Deterministically sort and format JSON payloads",
+    name: "JSON Diff",
+    description: "Paste JSON, normalize+sort, and diff instantly",
+    href: "/jsondiff",
   },
   {
     name: "String Lab",
@@ -44,7 +45,9 @@ export default function LandingPage() {
                 className="inline-flex flex-col items-center rounded-full border border-white/20 px-6 py-3 text-white transition hover:border-white/50 hover:bg-white/5"
               >
                 <span>{tool.name}</span>
-                <span className="text-sm text-[#8ea3d3]">{tool.description}</span>
+                <span className="text-sm text-[#8ea3d3]">
+                  {tool.description}
+                </span>
               </Link>
             ) : (
               <div className="inline-flex flex-col items-center rounded-full border border-dashed border-white/10 px-6 py-3 text-[#6f7ea6]">
