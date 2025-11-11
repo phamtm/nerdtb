@@ -72,6 +72,8 @@ export function MonacoDiffViewer({
         "editorLineNumber.dimmedForeground": "#bcc2d6",
         "diffEditor.insertedLineBackground": "#c2f1d999",
         "diffEditor.removedLineBackground": "#ffe8e566",
+        "diffEditorGutter.insertedLineBackground": "#7adbb9cc",
+        "diffEditorGutter.removedLineBackground": "#ff9faab3",
         "diffEditor.insertedTextBackground": "#94e2bfcc",
         "diffEditor.removedTextBackground": "#ffbbc680",
         "scrollbarSlider.background": "#c5cad880",
