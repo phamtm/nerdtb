@@ -13,6 +13,11 @@ const tools = [
     href: "/jsondiff",
   },
   {
+    name: "Numop Diff",
+    description: "Compare legacy vs modern payloads in one paste",
+    href: "/numopdiff",
+  },
+  {
     name: "String Lab",
     description: "Encode, decode, and transform text snippets",
   },
