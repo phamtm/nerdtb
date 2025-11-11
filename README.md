@@ -1,8 +1,16 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# nerdtb (Nerd Toolbox)
+
+nerdtb is a browser-based toolbox for software engineers who want quick access to everyday utilities without leaving their workflow. The webapp currently ships with helpers such as:
+
+- Diff viewer for comparing snippets or entire files
+- JSON sorter and formatter for taming API payloads
+- Additional quick-win tools (e.g., text transformers, encoders) with more on the way
+
+The project is built on [Next.js](https://nextjs.org) and uses `npm` for package management, scripts, and dependency lifecycle.
 
 ## Getting Started
 
-First, install dependencies and run the development server:
+Install dependencies and start the local dev server:
 
 ```bash
 npm install
@@ -11,9 +19,7 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The entry point for the main UI lives in `src/app/page.tsx`, and edits there reflect immediately thanks to Next.js hot reloading.
 
 ## Learn More
 
