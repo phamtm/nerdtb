@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import "monaco-editor/min/vs/editor/editor.main.css";
+import "monaco-editor/esm/vs/base/browser/ui/codicons/codicon/codicon.css";
 import "./globals.css";
 
 const geistSans = Geist({

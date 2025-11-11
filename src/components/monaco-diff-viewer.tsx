@@ -5,8 +5,13 @@ import type { editor } from "monaco-editor";
 import dynamic from "next/dynamic";
 import { useMemo } from "react";
 
+import { ensureDiffMonaco } from "@/lib/monaco/diff-only-loader";
+
 const DiffEditor = dynamic(
-  () => import("@monaco-editor/react").then((mod) => mod.DiffEditor),
+  async () => {
+    await ensureDiffMonaco();
+    return import("@monaco-editor/react").then((mod) => mod.DiffEditor);
+  },
   { ssr: false },
 );
 

@@ -67,6 +67,9 @@ export function JsonDiffTool({
             className="h-48 w-full rounded-xl border border-[#c4d2f5] bg-white/90 p-4 font-mono text-xs text-[#0f1534] shadow-inner focus:border-[#4f9fff] focus:outline-none"
             spellCheck={false}
             placeholder="Paste JSON here"
+            // Browser extensions inject extra attributes client-side;
+            // suppressHydrationWarning prevents noisy mismatches for these fields.
+            suppressHydrationWarning
           />
           {leftError ? <ErrorText message={leftError} /> : null}
         </Col>
@@ -78,6 +81,7 @@ export function JsonDiffTool({
             className="h-48 w-full rounded-xl border border-[#c4d2f5] bg-white/90 p-4 font-mono text-xs text-[#0f1534] shadow-inner focus:border-[#4f9fff] focus:outline-none"
             spellCheck={false}
             placeholder="Paste JSON here"
+            suppressHydrationWarning
           />
           {rightError ? <ErrorText message={rightError} /> : null}
         </Col>
