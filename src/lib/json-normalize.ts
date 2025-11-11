@@ -31,7 +31,7 @@ const sortObject = (
 ): Record<string, JsonValue> => {
   const sortedEntries = Object.keys(value)
     .sort((a, b) => collator.compare(a, b))
-    .map((key) => [key, sortValue(value[key])]);
+    .map<[string, JsonValue]>((key) => [key, sortValue(value[key])]);
 
   return sortedEntries.reduce<Record<string, JsonValue>>(
     (acc, [key, sortedValue]) => {

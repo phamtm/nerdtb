@@ -1,8 +1,9 @@
 "use client";
 
-import dynamic from "next/dynamic";
-import { useCallback, useMemo } from "react";
 import type { DiffEditorProps } from "@monaco-editor/react";
+import type { editor } from "monaco-editor";
+import dynamic from "next/dynamic";
+import { useMemo } from "react";
 
 const DiffEditor = dynamic(
   () => import("@monaco-editor/react").then((mod) => mod.DiffEditor),
@@ -30,7 +31,7 @@ export function MonacoDiffViewer({
   className,
   height = "calc(100vh)",
 }: MonacoDiffViewerProps) {
-  const diffOptions = useMemo(
+  const diffOptions = useMemo<editor.IDiffEditorConstructionOptions>(
     () => ({
       automaticLayout: true,
       fontFamily:

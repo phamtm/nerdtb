@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Col, Row } from "./layout-primitives";
 import { normalizeJsonText } from "../lib/json-normalize";
+import { Col, Row } from "./layout-primitives";
 
 type JsonDiffToolProps = {
   readonly initialOriginal: string;
