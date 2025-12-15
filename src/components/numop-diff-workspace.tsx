@@ -18,7 +18,10 @@ const defaultSides = { original: "", modified: "" };
 // while reusing the existing toolbar controls for layout tweaks.
 export function NumopDiffWorkspace({ initialSource }: NumopDiffWorkspaceProps) {
   const { options, actions } = useDiffViewOptions();
-  const parsed = useMemo(() => parseNumopSource(initialSource), [initialSource]);
+  const parsed = useMemo(
+    () => parseNumopSource(initialSource),
+    [initialSource],
+  );
   const startingSource = parsed.ok ? parsed.formattedSource : initialSource;
   const initialSides = parsed.ok ? parsed.sides : defaultSides;
   const [payload, setPayload] = useState(initialSides);

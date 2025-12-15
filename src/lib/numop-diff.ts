@@ -6,9 +6,15 @@ export type NumopDiffSides = {
 };
 
 type FormatResult = { readonly formatted: string } | { readonly error: string };
-type ExtractResult = { readonly sides: NumopDiffSides } | { readonly error: string };
+type ExtractResult =
+  | { readonly sides: NumopDiffSides }
+  | { readonly error: string };
 type ParseResult =
-  | { readonly ok: true; readonly formattedSource: string; readonly sides: NumopDiffSides }
+  | {
+      readonly ok: true;
+      readonly formattedSource: string;
+      readonly sides: NumopDiffSides;
+    }
   | { readonly ok: false; readonly error: string };
 
 const isPlainObject = (value: unknown): value is Record<string, unknown> =>
@@ -56,7 +62,10 @@ export const extractNumopSides = (value: unknown): ExtractResult => {
 
 export const parseNumopSource = (input: string): ParseResult => {
   if (!input.trim()) {
-    return { ok: false, error: "Provide a JSON object with modern and legacy keys" };
+    return {
+      ok: false,
+      error: "Provide a JSON object with modern and legacy keys",
+    };
   }
 
   const normalized = normalizeJsonText(input);

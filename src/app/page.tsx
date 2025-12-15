@@ -18,6 +18,11 @@ const tools = [
     href: "/numopdiff",
   },
   {
+    name: "ABI Decoder",
+    description: "Translate calldata into structured arguments",
+    href: "/abi-decode",
+  },
+  {
     name: "String Lab",
     description: "Encode, decode, and transform text snippets",
   },

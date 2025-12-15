@@ -1,5 +1,5 @@
-import { NumopDiffWorkspace } from "../../components/numop-diff-workspace";
 import { Col } from "../../components/layout-primitives";
+import { NumopDiffWorkspace } from "../../components/numop-diff-workspace";
 
 const sampleNumopPayload = `{
   "legacy": {
